@@ -10,10 +10,17 @@ public class Program2 {
 		
 		DepartmentDao departmentDao = DaoFactory.CreateDepartmentDao();
 		
-		System.out.println("=== TEST 1: department insert ====");
+		System.out.println("==== TEST 1: department insert ====");
 		Department newDepatment = new Department(null, "Support");
 		departmentDao.insert(newDepatment);
 		System.out.println("Inserted! New id = " + newDepatment.getId());
+		
+		System.out.println("==== TEST 2: department update ====");
+		Department dep = new Department();
+		dep.setId(3);
+		dep.setName("Personal");
+		departmentDao.update(dep);
+		System.out.println("Update completed");
 
 	}
 
